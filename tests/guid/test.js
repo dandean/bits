@@ -23,12 +23,14 @@ Evidence.TestCase.extend('GUID Tests', {
     // I'd rather have:
     // t.assertError(new Guid("invalid-string"));
     // than this:
-    try {
-      new Guid("invalid-string");
-      t.assert(false);
-    } catch(e) {
-      t.assert(true);
-    }
+    t.assert((function() {
+      try {
+        new Guid("invalid-string");
+        return false; // Should not get here if constructor fails.
+      } catch(e) {
+        return true;
+      }
+    })());
     
     var guid = Guid.create();
     
