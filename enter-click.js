@@ -8,6 +8,8 @@
  *  
  *  Usage:
  *  $('fieldset_forgot').onEnterClick($('btn_Forgot'));
+ *
+ *  Original implementation by Tim Walker (http://github.com/twalker)
 **/
 var EnterClick = Class.create({
 	relevantTypes: $w('text password checkbox radio'),
