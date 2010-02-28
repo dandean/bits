@@ -1,3 +1,3 @@
-I just realized that onEnterClick is already up on GitHub. I've now forked here to here:
+# Just some reusable `bits` of JavaScript.
 
-http://github.com/dandean/onEnterClick
+I'll try to add unit tests into the `tests` folder as I have time.
