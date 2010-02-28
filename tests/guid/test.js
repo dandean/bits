@@ -32,12 +32,11 @@ Evidence.TestCase.extend('GUID Tests', {
       }
     })());
     
-    var guid = Guid.create();
-    
     // Test basic equality with Guid.EMPTY
     t.assert(new Guid(Guid.EMPTY).equals(Guid.EMPTY));
     
     // Test equality with generated Guid
+    var guid = Guid.create();
     t.assert(guid.equals(guid));
     t.assert(guid.equals(guid.toString()));
   }
