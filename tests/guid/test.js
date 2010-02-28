@@ -21,7 +21,7 @@ Evidence.TestCase.extend('GUID Tests', {
     // Check that invalid guid string can't be used for instantiation.
     
     // I'd rather have:
-    // t.assertError(new Guid("invalid-string"));
+    // t.assertError(function() { new Guid("invalid-string"); });
     // than this:
     t.assert((function() {
       try {
