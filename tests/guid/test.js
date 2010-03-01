@@ -12,8 +12,7 @@ Evidence.TestCase.extend('GUID Tests', {
     var guids = {}, i = 0;
 
     while (i < 50000) {
-      var guid = Guid.create().toString();
-      guids[guid] = true;
+      guids[Guid.create().toString()] = true;
       i++;
     }
     t.assertEqual(Object.keys(guids).length, 50000);
