@@ -1,4 +1,4 @@
-if (!("isDate") in Object) {
+if (!("isDate" in Object)) {
   /**
    *  Object.isDate(object) -> Boolean
    *  - object (Object): An object to test.
