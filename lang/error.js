@@ -1,8 +1,13 @@
 /**
- *  Error.create(base, name) -> Error
+ *  Error.create(base, options) -> Error
  *  - base (Error): Optional base-error class. If not provided, [[Error]] is used.
- *  - name (String): Optional type name. If not provided, "Error" is used.
- *  - defaultMessage (String): The default message to use if none is provided.
+ *  - options (Object): Optional options object.
+ *
+ *  Options:
+ *
+ *  * `name`: The error name. If not provided, "Error" is used.
+ *  * `message`: The default message for the error class. If not provided a
+ *      type-specific default message used.
  *
  *  ##### Examples
  *
