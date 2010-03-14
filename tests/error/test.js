@@ -17,6 +17,6 @@ Evidence.TestCase.extend('Error Tests', {
     
     var TestErrorThree = Error.create({name: "TestErrorThree"});
     c3 = new TestErrorThree();
-    t.assertEqual("TestErrorThree error", c3.message);
+    t.assertEqual("TestErrorThree", c3.message);
   }
 });

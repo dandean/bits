@@ -37,7 +37,7 @@ Error.create = function(base, options) {
   
   options.name = options.name || base.prototype.name;
   options.message = options.message
-    || ((options.name == "Error") ? "Unknown" : options.name) + " error";
+    || ((options.name == "Error") ? "unknown error" : options.name);
 
   // Create the constructor
   var type = function() {
@@ -51,3 +51,32 @@ Error.create = function(base, options) {
 
   return type;
 };
+
+/**
+ *  class NotImplementedError
+**/
+var NotImplementedError = Error.create({
+  name: "NotImplementedError",
+  message: "The method is not implemented"
+});
+
+/**
+ *  class ArgumentError
+**/
+var ArgumentError = Error.create({
+  name: "ArgumentError"
+});
+
+/**
+ *  class ElementNotFoundError
+**/
+var ElementNotFoundError = Error.create({
+  name: "ElementNotFoundError"
+});
+
+/**
+ *  class NoSuchPropertyError
+**/
+var NoSuchPropertyError = Error.create({
+  name: "NoSuchPropertyError"
+});
