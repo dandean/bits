@@ -91,6 +91,53 @@ Object.extend(Cookie, {
   **/
   unset: function(name) {
     return Cookie.set(name, "", -1);
+  },
+
+  /**
+   *  Cookie.all() -> Array
+   *
+   *  Gets an [[Array]] of all available cookie information.
+  **/
+  all: function() {
+    var c = document.cookie.split(';'),
+        data = [];
+
+    for (var i = 0, cookie; i < c.length; i++) {
+      cookie = c[i].split('=');
+      data.push({
+        name: cookie[0].strip(),
+        value: unescape(cookie[1].strip())
+      });
+    }
+
+    return data;
+  },
+
+  /**
+   *  Cookie.find(nameOrDelegate) -> Object
+   *  - nameOrDelegate(String|Function): Cookie name or search function.
+   *
+   *  Returns the first cookie with the given name or which is found be the
+   *  search function.
+  **/
+  find: function(nameOrDelegate) {
+    if (Object.isString(nameOrDelegate)) {
+      nameOrDelegate = function(c) { return c.name == nameOrDelegate; };
+    }
+    return this.all().find(nameOrDelegate);
+  },
+
+  /**
+   *  Cookie.findAll(nameOrDelegate) -> Array
+   *  - nameOrDelegate(String|Function): Cookie name or search function.
+   *
+   *  Returns an [[Array]] of cookie data for the name or search function.
+  **/
+  findAll: function(nameOrDelegate) {
+    if (Object.isString(nameOrDelegate)) {
+      nameOrDelegate = function(c) { return c.name == nameOrDelegate; };
+    }
+    return this.all().findAll(nameOrDelegate);
   }
 });
 
