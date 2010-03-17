@@ -38,6 +38,20 @@ var Guid = Class.create({
   },
 
   /**
+   *  Guid#inspect() -> String
+  **/
+  inspect: function() {
+    return "#<guid " + this.toString() + ">";
+  },
+
+  /**
+   *  Guid#toJSON() -> String
+  **/
+  toJSON: function() {
+    return Object.toJSON(this._value);
+  },
+
+  /**
    *  Guid#toString() -> String
    *
    *  Returns the Guid is [[String]] format.
