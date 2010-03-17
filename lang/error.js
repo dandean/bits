@@ -80,3 +80,11 @@ var ElementNotFoundError = Error.create({
 var NoSuchPropertyError = Error.create({
   name: "NoSuchPropertyError"
 });
+
+/**
+ *  class ArgumentUndefinedError
+**/
+var ArgumentUndefinedError = Error.create({
+  name: "ArgumentUndefinedError",
+  message: "Argument is undefined"
+});
